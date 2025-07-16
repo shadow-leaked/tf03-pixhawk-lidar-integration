@@ -86,3 +86,23 @@ To **prevent descending below X meters**, e.g. **1m** for test:
 if rangefinder:distance_cm() < 100 then
   -- Prevent descent
 end
+```
+
+### 🔁 Alternatively, Use Parameter-Only Setup
+
+- `EK3_RNG_USE_HGT = 1`
+- `RNGFND1_MAX_CM = 150`
+- Use **AltHold** mode
+
+---
+
+### 🛠️ Troubleshooting
+
+#### Common Problems
+
+| **Symptom**               | **Likely Cause**                   | **Fix**                                                            |
+|---------------------------|------------------------------------|---------------------------------------------------------------------|
+| Only detecting 0.5–1m     | Wrong `MAX_CM` or wrong serial config | Match TF03 with correct `SERIALx_BAUD` and `PROTOCOL = 9`          |
+| No readings               | Wrong wiring (TX/RX flipped)       | Use logic analyzer or re-check cable pinout                        |
+| TF03 not detected         | Baud mismatch or wrong port        | Use Benewake Viewer to verify TF03 UART settings and baud rate     |
+
